@@ -1,0 +1,14 @@
+2018-04-30 12:18:27.952  INFO 6156 --- [main] com.wangchao.wxsell.LoggerTest           : Starting LoggerTest on YRYMR231PFJWWE2 with PID 6156 (started by wang in F:\IDEAWorkSpace\wxsell)
+2018-04-30 12:18:27.955  INFO 6156 --- [main] com.wangchao.wxsell.LoggerTest           : No active profile set, falling back to default profiles: default
+2018-04-30 12:18:27.997  INFO 6156 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@4d15107f: startup date [Mon Apr 30 12:18:27 CST 2018]; root of context hierarchy
+2018-04-30 12:18:29.482  INFO 6156 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-04-30 12:18:29.725  INFO 6156 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@4d15107f: startup date [Mon Apr 30 12:18:27 CST 2018]; root of context hierarchy
+2018-04-30 12:18:29.817  INFO 6156 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-04-30 12:18:29.817  INFO 6156 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-04-30 12:18:29.855  INFO 6156 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-04-30 12:18:29.857  INFO 6156 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-04-30 12:18:30.210  INFO 6156 --- [main] com.wangchao.wxsell.LoggerTest           : Started LoggerTest in 2.908 seconds (JVM running for 4.148)
+2018-04-30 12:18:30.337  INFO 6156 --- [main] com.wangchao.wxsell.LoggerTest           : name=wang,password=123
+2018-04-30 12:18:30.337  INFO 6156 --- [main] com.wangchao.wxsell.LoggerTest           : info2222.....
+2018-04-30 12:18:30.337 ERROR 6156 --- [main] com.wangchao.wxsell.LoggerTest           : error2222....
+2018-04-30 12:18:30.342  INFO 6156 --- [Thread-2] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@4d15107f: startup date [Mon Apr 30 12:18:27 CST 2018]; root of context hierarchy
