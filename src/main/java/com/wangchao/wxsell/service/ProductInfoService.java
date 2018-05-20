@@ -1,6 +1,7 @@
 package com.wangchao.wxsell.service;
 
 import com.wangchao.wxsell.domain.ProductInfo;
+import com.wangchao.wxsell.dto.CartDTO;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
@@ -17,7 +18,9 @@ public interface ProductInfoService {
     ProductInfo save(ProductInfo productInfo);
 
     //加库存
+    void increaseStock(List<CartDTO> cartDTOList);
 
     //减库存
+    void decreaseStock(List<CartDTO> cartDTOList);
 
 }

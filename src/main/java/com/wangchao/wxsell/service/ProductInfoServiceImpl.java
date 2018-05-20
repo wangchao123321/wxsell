@@ -2,11 +2,15 @@ package com.wangchao.wxsell.service;
 
 import com.wangchao.wxsell.dao.ProductInfoDao;
 import com.wangchao.wxsell.domain.ProductInfo;
+import com.wangchao.wxsell.dto.CartDTO;
 import com.wangchao.wxsell.enums.ProductStatusEnum;
+import com.wangchao.wxsell.enums.ResultEnum;
+import com.wangchao.wxsell.exception.SellException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -34,5 +38,31 @@ public class ProductInfoServiceImpl implements ProductInfoService {
     @Override
     public ProductInfo save(ProductInfo productInfo) {
         return productInfoDao.save(productInfo);
+    }
+
+    @Override
+    @Transactional
+    public void increaseStock(List<CartDTO> cartDTOList) {
+
+    }
+
+    @Override
+    @Transactional
+    public void decreaseStock(List<CartDTO> cartDTOList) {
+        for (CartDTO cartDTO : cartDTOList) {
+            ProductInfo productInfo=productInfoDao.findOne(cartDTO.getProductId());
+            if(productInfo==null){
+                throw new SellException(ResultEnum.PRODUCT_NOT_EXIST);
+            }
+
+            Integer result=productInfo.getProductStock()-cartDTO.getProductQuantity();
+            if(result<0){
+                throw new SellException(ResultEnum.PRODUCT_STOCK_ERROR);
+            }
+
+            productInfo.setProductStock(result);
+
+            productInfoDao.save(productInfo);
+        }
     }
 }
