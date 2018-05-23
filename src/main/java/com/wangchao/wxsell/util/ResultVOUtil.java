@@ -1,6 +1,8 @@
 package com.wangchao.wxsell.util;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.wangchao.wxsell.vo.ResultVO;
+
 
 public class ResultVOUtil {
 

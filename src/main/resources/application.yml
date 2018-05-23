@@ -4,10 +4,12 @@ spring:
     username: root
 #    password: root
     password: 123456
-    url: jdbc:mysql://192.168.1.104/wxsell?characterEncoding=UTF-8&useSSL=false
+    url: jdbc:mysql://192.168.1.105/wxsell?characterEncoding=UTF-8&useSSL=false
 #    url: jdbc:mysql://127.0.0.1:3306/wxsell?characterEncoding=UTF-8&useSSL=false
   jpa:
     show-sql: true
+  jackson:
+    default-property-inclusion: non_null
 server:
   context-path: /sell
 
