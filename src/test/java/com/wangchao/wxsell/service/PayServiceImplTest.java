@@ -16,9 +16,12 @@ public class PayServiceImplTest {
     @Autowired
     private PayService payService;
 
+    @Autowired
+    private OrderService orderService;
+
     @Test
     public void create() {
-        OrderDTO orderDTO=new OrderDTO();
+        OrderDTO orderDTO=orderService.findOne("1526913231941994245");
         payService.create(orderDTO);
     }
 }

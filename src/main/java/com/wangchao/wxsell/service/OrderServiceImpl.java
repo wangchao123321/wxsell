@@ -95,7 +95,7 @@ public class OrderServiceImpl implements OrderService {
     public OrderDTO findOne(String orderId) {
 
         OrderMaster orderMaster = orderMasterDao.findOne(orderId);
-        System.out.println(orderId);
+        System.out.println(orderMaster);
         if(orderMaster==null){
             throw new SellException(ResultEnum.ORDER_NOT_EXIST);
         }
