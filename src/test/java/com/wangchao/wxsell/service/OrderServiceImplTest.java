@@ -98,4 +98,11 @@ public class OrderServiceImplTest {
         OrderDTO result = orderService.paid(orderDTO);
         log.info("完结订单结果 {}",result);
     }
+
+    @Test
+    public void findList1() {
+        PageRequest pageRequest=new PageRequest(0,2);
+        Page<OrderDTO> page=orderService.findList(pageRequest);
+        log.info("详情 {}"+page);
+    }
 }

@@ -10,9 +10,11 @@ spring:
     show-sql: true
   jackson:
     default-property-inclusion: non_null
+#  boot:
+#    admin:
+#      url: http://localhost:8070
 server:
   context-path: /sell
-
 
 
 #logging:
