@@ -73,4 +73,35 @@ public class ProductInfoServiceImpl implements ProductInfoService {
             productInfoDao.save(productInfo);
         }
     }
+
+    @Override
+    public ProductInfo onSale(String productId) {
+        ProductInfo productInfo=productInfoDao.findOne(productId);
+
+        if(productInfo==null){
+
+        }
+
+        if(productInfo.getProductStatusEnum() == ProductStatusEnum.UP){
+
+        }
+        productInfo.setProductStatus(ProductStatusEnum.DOWN.getCode());
+        productInfo=productInfoDao.save(productInfo);
+
+        return productInfo;
+    }
+
+    @Override
+    public ProductInfo offSale(String productId) {
+        ProductInfo productInfo=productInfoDao.findOne(productId);
+        if(productInfo==null){
+        }
+
+        if(productInfo.getProductStatusEnum() == ProductStatusEnum.DOWN){
+
+        }
+        productInfo.setProductStatus(ProductStatusEnum.UP.getCode());
+        productInfo=productInfoDao.save(productInfo);
+        return productInfo;
+    }
 }
