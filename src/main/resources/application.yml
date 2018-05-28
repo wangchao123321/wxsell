@@ -10,12 +10,16 @@ spring:
     show-sql: true
   jackson:
     default-property-inclusion: non_null
+  redis:
+    host: 192.168.1.105
+#    host: 140.143.163.212
+    port: 6379
+
 #  boot:
 #    admin:
 #      url: http://localhost:8070
 server:
   context-path: /sell
-
 
 #logging:
 #  pattern:
@@ -25,11 +29,11 @@ server:
 #  level: info
 
 wechat:
-  mpAppId: wxd898fcb01713c658
-  mpAppSecret: 47ccc303338cee6e62894fxxxxxxxxxxx
+  mpAppId: wx74d79afcd0e1a2e3
+  mpAppSecret: e2bd9c1f77db5528ed0ba1eb8ae88fa6
   openAppId: wx6ad144e54af67d87
   openAppSecret: 91a2ff6d38a2bbccfb7e9f9079108e2e
-  mchId: 1483469312
-  mchKey: 06C56A89949D617xxxxxxxxxxx
+  mchId: 1404464302
+  mchKey: 5cc72b9e23022c56c3a22a578654f0eb
   keyPath: /var/weixin_cert/h5.p12
   notifyUrl: http://selltest.nat300.top/sell/pay/notify
