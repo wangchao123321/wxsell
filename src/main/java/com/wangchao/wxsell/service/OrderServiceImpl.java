@@ -33,6 +33,10 @@ import java.util.stream.Collectors;
 @Slf4j
 public class OrderServiceImpl implements OrderService {
 
+
+    @Autowired
+    private WebSocket webSocket;
+
     @Autowired
     private ProductInfoService productInfoService;
 
@@ -87,6 +91,10 @@ public class OrderServiceImpl implements OrderService {
             new CartDTO(e.getProductId(),e.getProductQuantity())
         ).collect(Collectors.toList());
         productInfoService.decreaseStock(cartDTOList);
+
+
+        //发送webSocket消息
+        webSocket.sendMessage(orderDTO.getOrderId());
 
         return orderDTO;
     }
